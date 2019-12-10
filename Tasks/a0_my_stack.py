@@ -3,7 +3,7 @@ My little Stack
 """
 from typing import Any
 
-stack = []
+stack = [1,2,3,4]
 
 def push(elem: Any) -> None:
 	"""
@@ -24,7 +24,11 @@ def pop() -> Any:
 
 	:return: popped element
 	"""
-	return None
+	global stack
+	rmvd = stack.pop()
+	print("Popped elem {}".format(rmvd))
+
+	return rmvd
 
 
 def peek(ind: int = 0) -> Any:
@@ -34,8 +38,12 @@ def peek(ind: int = 0) -> Any:
 	:param ind: index of element (count from the top)
 	:return: peeked element
 	"""
+	global stack
+	pk = len(stack)
+	ind = stack[pk-1]
 	print(ind)
-	return None
+	return ind
+	#return None
 
 
 def clear() -> None:
@@ -44,10 +52,19 @@ def clear() -> None:
 
 	:return: None
 	"""
+	global stack
+	if stack == []:
+		return None
+	else:
+		stack.clear()
+	print(stack)
 	return None
 
 
 if __name__ == "__main__":
-	#my_list = [1, 2]
-	push(1)
-	print(stack)
+	#my_list = [1, 2, 4, 5]
+	#push(1)
+	#pop()
+	#peek()
+	clear()
+	#print(stack)
