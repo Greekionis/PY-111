@@ -39,7 +39,7 @@ def sinx(x: Union[int, float]) -> float:
 	:return: sin(x) value
 	"""
 
-	
+
 	print(x)
 	return 0
 
